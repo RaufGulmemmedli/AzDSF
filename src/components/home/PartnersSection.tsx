@@ -34,8 +34,8 @@ export default function PartnersSection() {
               <Image
                 src="/logo/full-color.png"
                 alt={t('logoAlt')}
-                width={558}
-                height={306}
+                width={475}
+                height={500}
                 className="h-auto w-full max-w-[220px]"
               />
             </div>

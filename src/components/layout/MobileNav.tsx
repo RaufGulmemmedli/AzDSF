@@ -45,8 +45,8 @@ export default function MobileNav({ open, onClose, locale }: Props) {
             <Image
               src="/logo/mark-white.png"
               alt=""
-              width={321}
-              height={370}
+              width={340}
+              height={239}
               style={{ height: 40, width: 'auto' }}
             />
             <button

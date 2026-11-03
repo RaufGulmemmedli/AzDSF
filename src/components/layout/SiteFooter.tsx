@@ -59,9 +59,9 @@ export default async function SiteFooter() {
               <Image
                 src="/logo/full-white.png"
                 alt=""
-                width={558}
-                height={306}
-                style={{ height: 84, width: 'auto' }}
+                width={475}
+                height={500}
+                style={{ height: 120, width: 'auto' }}
                 className="mb-4"
               />
             </Link>

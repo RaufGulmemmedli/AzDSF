@@ -14,8 +14,8 @@ type Props = {
 };
 
 const SIZES = {
-  mark: { w: 321, h: 370 },
-  full: { w: 558, h: 306 }
+  mark: { w: 340, h: 239 },
+  full: { w: 475, h: 500 }
 };
 
 export default function Brand({
