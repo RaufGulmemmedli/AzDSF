@@ -40,6 +40,8 @@ export default function GallerySection() {
                 mode={item.mode}
                 className="!absolute inset-0 !rounded-none transition-transform duration-700 group-hover:scale-105"
                 src={item.image}
+                focus={item.focus}
+                zoom={item.zoom}
                 alt={captions[i]}
                 sizes="(min-width: 768px) 50vw, 50vw"
               />

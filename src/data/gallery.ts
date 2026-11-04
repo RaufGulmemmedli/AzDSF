@@ -44,6 +44,7 @@ export const gallery: GalleryItem[] = [
     caption: { az: 'Məşq zalı · səhər seansı', en: 'Training hall · morning session' },
     kind: 'photo',
     image: '/img/class-mural.png',
+    focus: '50% 30%',
     seed: 54,
     mode: 'mag',
     span: 'col-span-1 md:col-span-2 aspect-square md:aspect-[4/3]'
@@ -53,6 +54,7 @@ export const gallery: GalleryItem[] = [
     caption: { az: 'Mətbuat divarı · yarış öncəsi', en: 'Press wall · before the competition' },
     kind: 'photo',
     image: '/img/ballroom-pose-dramatic.png',
+    focus: '50% 5%',
     seed: 55,
     mode: 'brand',
     span: 'col-span-2 aspect-[16/9] md:col-span-2 md:aspect-[4/3]'

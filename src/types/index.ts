@@ -123,6 +123,14 @@ export type GalleryItem = {
   kind: 'photo' | 'video';
   /** Photograph under `/public`; the generated composition is used when absent. */
   image?: string;
+  /**
+   * `object-position` for `image` inside the `span` slot, e.g. `'50% 5%'`.
+   * The tiles are `object-cover` at fixed aspect ratios, so a source shaped
+   * differently from its slot is cropped — centred, that takes heads off first.
+   */
+  focus?: string;
+  /** Magnification of `image` around `focus`, for shots framed too wide. */
+  zoom?: number;
   seed: number;
   mode: VisualMode;
   span: string;
