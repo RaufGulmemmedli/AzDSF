@@ -11,7 +11,7 @@ type Props = {
 export default function SectionHead({ eyebrow, title, id, right, onDark }: Props) {
   return (
     <div
-      className={`mb-[clamp(1.8rem,2.8vw,2.6rem)] flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-b pb-4.5 ${
+      className={`mb-[clamp(1.8rem,2.8vw,2.6rem)] flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-b pb-5 ${
         onDark ? 'border-white/15' : 'border-line'
       }`}
     >

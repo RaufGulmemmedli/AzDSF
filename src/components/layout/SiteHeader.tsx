@@ -19,6 +19,9 @@ export default function SiteHeader() {
   const [drawer, setDrawer] = useState(false);
   const headRef = useRef<HTMLDivElement>(null);
 
+  const wordmarkTop = locale === 'en' ? 'Azerbaijan DanceSport' : 'Azərbaycan İdman Rəqsləri';
+  const wordmarkBottom = locale === 'en' ? 'Federation' : 'Federasiyası';
+
   useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 8);
     onScroll();
@@ -80,19 +83,32 @@ export default function SiteHeader() {
             stuck ? 'shadow-[0_10px_30px_-22px_rgba(27,70,122,0.3)]' : ''
           }`}
         >
-          <div className="wrap flex h-[64px] items-center gap-5 xl:h-[70px]">
+          <div className="wrap flex h-[64px] items-center gap-3 sm:gap-5 xl:h-[70px]">
             <Brand
               variant="mark"
               height={50}
               withWordmark
-              wordmarkTop={locale === 'en' ? 'Azerbaijan DanceSport' : 'Azərbaycan İdman Rəqsləri'}
-              wordmarkBottom={locale === 'en' ? 'Federation' : 'Federasiyası'}
+              wordmarkTop={wordmarkTop}
+              wordmarkBottom={wordmarkBottom}
               ariaLabel={
                 locale === 'en'
                   ? 'Azerbaijan DanceSport Federation — home'
                   : 'Azərbaycan İdman Rəqsləri Federasiyası — ana səhifə'
               }
             />
+
+            {/* Wordmark between the logo and the menu button on phone / tablet */}
+            <span
+              aria-hidden="true"
+              className="flex min-w-0 flex-1 flex-col items-center justify-center text-center leading-[1.15] xl:hidden"
+            >
+              <span className="font-display text-[0.6rem] font-bold uppercase tracking-[0.03em] text-navy sm:text-[0.72rem] sm:tracking-[0.055em]">
+                {wordmarkTop}
+              </span>
+              <span className="font-display text-[0.6rem] font-bold uppercase tracking-[0.03em] text-mag sm:text-[0.72rem] sm:tracking-[0.055em]">
+                {wordmarkBottom}
+              </span>
+            </span>
 
             <nav aria-label={t('mainNav')} className="ml-auto hidden items-stretch xl:flex">
               {navigation.map((item) => {

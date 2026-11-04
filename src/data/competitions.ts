@@ -1,10 +1,93 @@
 import type { Competition } from '@/types';
 
 /**
- * DEMO DATA — these events are not announced federation competitions.
- * Replace with the API response once the calendar endpoint exists.
+ * The first four entries are REAL announced federation events (posters + press
+ * releases supplied by AzDSF) — keep their dates, venues and programmes accurate.
+ * Everything after the `DEMO DATA` marker is fabricated placeholder content.
+ * Replace the whole array with the API response once the calendar endpoint exists.
  */
 export const competitions: Competition[] = [
+  {
+    id: 'caspian-breaking-battle-2026',
+    day: '08',
+    month: { az: 'Noy', en: 'Nov' },
+    year: 2026,
+    isoDate: '2026-11-08',
+    name: { az: 'Caspian Breaking Battle', en: 'Caspian Breaking Battle' },
+    note: {
+      az: 'Zəfər Günü turniri · 12:00–15:30',
+      en: 'Victory Day tournament · 12:00–15:30'
+    },
+    venue: { az: 'Nərgiz Mall, 3-cü mərtəbə, Bakı', en: 'Nargiz Mall, 3rd floor, Baku' },
+    programme: { az: 'Breykinq · B-Boy / B-Girl battle', en: 'Breaking · B-Boy / B-Girl battles' },
+    scope: 'national',
+    status: 'open'
+  },
+  {
+    id: 'turkic-world-2026',
+    day: '15',
+    month: { az: 'Noy', en: 'Nov' },
+    year: 2026,
+    isoDate: '2026-11-15',
+    name: {
+      az: 'Türk Dünyası – 2026 İdman Rəqsləri Müsabiqəsi',
+      en: 'Turkic World – 2026 DanceSport Games'
+    },
+    note: {
+      az: '«Eyni kök, daha güclü sabah» · 6 ölkə',
+      en: '“Same roots, a stronger tomorrow” · 6 countries'
+    },
+    venue: { az: 'Sea Breeze, Bakı', en: 'Sea Breeze, Baku' },
+    programme: {
+      az: 'Latın · Samba, Rumba, Ça-ça-ça, Paso Doble, Jive',
+      en: 'Latin · Samba, Rumba, Cha-cha-cha, Paso Doble, Jive'
+    },
+    scope: 'international',
+    status: 'open'
+  },
+  {
+    id: 'ensemble-national-dance-championship-2026',
+    day: '06',
+    month: { az: 'Dek', en: 'Dec' },
+    year: 2026,
+    isoDate: '2026-12-06',
+    name: {
+      az: 'Ansamblların Milli Rəqs Çempionatı 2026',
+      en: 'National Dance Championship for Ensembles 2026'
+    },
+    note: {
+      az: 'Tarixdə ilk dəfə · 1 noyabr – 6 dekabr, Qala gecəsi 6 dekabr',
+      en: 'First edition · 1 Nov – 6 Dec, gala night 6 Dec'
+    },
+    venue: { az: 'Bakı', en: 'Baku' },
+    programme: { az: 'Milli rəqs · ansambllar', en: 'National dance · ensembles' },
+    scope: 'national',
+    status: 'planned'
+  },
+  {
+    id: 'breaking-national-championship-2026',
+    day: '13',
+    month: { az: 'Dek', en: 'Dec' },
+    year: 2026,
+    isoDate: '2026-12-13',
+    name: {
+      az: 'Breykinq üzrə Ölkə Birinciliyi və Çempionatı',
+      en: 'National Breaking Championship'
+    },
+    note: {
+      az: '«Move & Spin Breaking Battle» · 12:00–17:00',
+      en: '“Move & Spin Breaking Battle” · 12:00–17:00'
+    },
+    venue: {
+      az: 'Crescent Mall, Neftçilər pr. 151, Xətai r., Bakı',
+      en: 'Crescent Mall, 151 Neftchilar Ave, Khatai, Baku'
+    },
+    programme: { az: 'Breykinq · B-Boy / B-Girl', en: 'Breaking · B-Boy / B-Girl' },
+    scope: 'national',
+    status: 'open'
+  },
+
+  /* ---- DEMO DATA — not announced federation competitions ---- */
   {
     id: 'baku-cup-2026',
     day: '14',

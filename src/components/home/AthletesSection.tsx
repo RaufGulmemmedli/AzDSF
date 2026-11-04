@@ -41,23 +41,27 @@ export default function AthletesSection() {
                     className="aspect-[3/4] !rounded-none transition-transform duration-500 group-hover:scale-[1.03]"
                     tag={athlete.image ? undefined : t('photoPending')}
                     src={athlete.image}
-                    alt={`${athlete.couple} — ${pick(athlete.detail, locale)}`}
+                    alt={athlete.detail ? `${athlete.name} — ${pick(athlete.detail, locale)}` : athlete.name}
                     sizes="(min-width: 1024px) 24vw, (min-width: 640px) 48vw, 100vw"
                   />
                 </div>
-                <div className="p-4.5">
+                <div className="p-5">
                   <h3 className="font-display text-[1rem] font-bold text-navy-950 leading-snug group-hover:text-navy-700 transition-colors">
-                    {athlete.couple}
+                    {athlete.name}
                   </h3>
-                  <p className="mt-1.5 font-mono text-[0.72rem] text-ink-2">
-                    {pick(athlete.detail, locale)}
-                  </p>
-                  <div className="mt-3 border-t border-line pt-3">
-                    <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-50 border border-navy-100 px-2.5 py-0.5 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.06em] text-navy-700">
-                      <span className="h-1.5 w-1.5 rounded-full bg-mag" />
-                      {pick(athlete.badge, locale)}
-                    </span>
-                  </div>
+                  {athlete.detail ? (
+                    <p className="mt-1.5 font-mono text-[0.72rem] text-ink-2">
+                      {pick(athlete.detail, locale)}
+                    </p>
+                  ) : null}
+                  {athlete.badge ? (
+                    <div className="mt-3 border-t border-line pt-3">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-navy-50 border border-navy-100 px-2.5 py-0.5 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.06em] text-navy-700">
+                        <span className="h-1.5 w-1.5 rounded-full bg-mag" />
+                        {pick(athlete.badge, locale)}
+                      </span>
+                    </div>
+                  ) : null}
                 </div>
               </article>
             </Reveal>

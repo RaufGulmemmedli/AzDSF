@@ -63,13 +63,13 @@ export default function CompetitionTable() {
           rows.map((row) => (
             <article
               key={row.id}
-              className="grid grid-cols-[84px_minmax(0,1fr)] items-center gap-x-4 gap-y-2.5 border-b border-line px-5 py-4.5 transition-colors last:border-b-0 hover:bg-surface/70 lg:grid-cols-[96px_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)_130px] lg:gap-x-[1.2rem] lg:px-6"
+              className="border-b border-line px-5 py-5 transition-colors last:border-b-0 hover:bg-surface/70 lg:grid lg:grid-cols-[96px_minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,0.9fr)_130px] lg:items-center lg:gap-x-[1.2rem] lg:px-6"
             >
-              <div className="row-span-4 self-start rounded-lg bg-navy-50 px-2 py-2.5 text-center border border-navy-100 lg:row-span-1 lg:mr-[-0.2rem] lg:self-center lg:rounded-none lg:border-0 lg:border-r lg:border-line lg:bg-transparent lg:px-0 lg:pr-4">
-                <b className="block font-display text-[1.65rem] font-extrabold leading-none text-navy-700">
+              <div className="mb-3 inline-flex items-baseline gap-2 rounded-lg border border-navy-100 bg-navy-50 px-3 py-1.5 lg:mb-0 lg:mr-[-0.2rem] lg:block lg:rounded-none lg:border-0 lg:border-r lg:border-line lg:bg-transparent lg:px-0 lg:pr-4 lg:text-center">
+                <b className="font-display text-[1.35rem] font-extrabold leading-none text-navy-700 lg:block lg:text-[1.65rem]">
                   {row.day}
                 </b>
-                <span className="mt-1 block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-navy-600">
+                <span className="font-mono text-[0.62rem] font-semibold uppercase tracking-[0.1em] text-navy-600 lg:mt-1 lg:block">
                   {pick(row.month, locale)} {row.year}
                 </span>
               </div>
@@ -81,21 +81,21 @@ export default function CompetitionTable() {
                 </small>
               </h3>
 
-              <p className="text-[0.82rem] text-ink-2">
+              <p className="mt-3 text-[0.82rem] text-ink-2 lg:mt-0">
                 <b className="mb-0.5 block font-mono text-[0.62rem] font-medium uppercase tracking-[0.12em] text-navy-700">
                   {t('labelVenue')}
                 </b>
                 {pick(row.venue, locale)}
               </p>
 
-              <p className="text-[0.82rem] text-ink-2">
+              <p className="mt-3 text-[0.82rem] text-ink-2 lg:mt-0">
                 <b className="mb-0.5 block font-mono text-[0.62rem] font-medium uppercase tracking-[0.12em] text-navy-700">
                   {t('labelProgramme')}
                 </b>
                 {pick(row.programme, locale)}
               </p>
 
-              <div>
+              <div className="mt-3.5 lg:mt-0">
                 <span
                   className={`inline-flex items-center gap-1.5 whitespace-nowrap rounded-full px-2.5 py-1 font-mono text-[0.66rem] font-semibold uppercase tracking-[0.06em] ${STATUS_STYLE[row.status]}`}
                 >

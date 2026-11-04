@@ -49,12 +49,30 @@ export type RankingRow = {
   delta: number;
 };
 
-export type ResultRow = {
+/** One dancer of a placed couple; `born` is the birth year printed on the protocol. */
+export type ResultPartner = {
+  name: string;
+  born: number;
+};
+
+export type ResultPlacement = {
+  position: number;
+  partners: ResultPartner[];
+};
+
+/** One programme of one age group, as published in the competition protocol. */
+export type ResultCategory = {
+  id: string;
+  /** Programme name — omitted when the protocol publishes one combined placing table. */
+  title?: Localized;
+  placements: ResultPlacement[];
+};
+
+export type CompetitionResult = {
+  id: string;
   competition: Localized;
-  date: string;
-  category: Localized;
-  couples: number;
-  winner: string;
+  ageGroup: Localized;
+  categories: ResultCategory[];
 };
 
 export type NewsItem = {
@@ -72,9 +90,11 @@ export type NewsItem = {
 
 export type Athlete = {
   id: string;
-  couple: string;
-  detail: Localized;
-  badge: Localized;
+  /** Couple, trio or solo dancer, exactly as the federation lists them. */
+  name: string;
+  /** Age group / programme / placing — omitted while it is still unknown. */
+  detail?: Localized;
+  badge?: Localized;
   /** Photograph under `/public`; the generated composition is used when absent. */
   image?: string;
   seed: number;

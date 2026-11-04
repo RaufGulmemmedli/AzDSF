@@ -3,8 +3,14 @@ import { ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import SectionHead from '@/components/ui/SectionHead';
 import Tabs from '@/components/ui/Tabs';
-import { rankingTables, recentResults } from '@/data/ranking';
+import { competitionResults, rankingTables } from '@/data/ranking';
 import { pick } from '@/types';
+
+const PODIUM_STYLE: Record<number, string> = {
+  1: 'bg-mag text-white shadow-[0_0_14px_rgba(237,1,138,0.45)]',
+  2: 'bg-white/90 text-navy-900',
+  3: 'bg-[#C98B4B] text-white'
+};
 
 function Delta({ value }: { value: number }) {
   if (value === 0) return <span className="font-mono text-[0.76rem] text-on-dark-2">—</span>;
@@ -68,33 +74,68 @@ export default function RankingSection() {
       id: 'results',
       label: t('recentResults'),
       panel: (
-        <div className="overflow-x-auto rounded-xl border border-white/15 bg-navy-950/60 shadow-[0_15px_35px_rgba(0,0,0,0.3)] backdrop-blur-md">
-          <table className="data-table">
-            <thead>
-              <tr>
-                <th scope="col">{t('thCompetition')}</th>
-                <th scope="col">{t('thDate')}</th>
-                <th scope="col">{t('thCategory')}</th>
-                <th scope="col" className="num">
-                  {t('thCouples')}
-                </th>
-                <th scope="col">{t('thWinner')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {recentResults.map((row) => (
-                <tr key={row.competition.az + row.date}>
-                  <td className="font-medium text-white">{pick(row.competition, locale)}</td>
-                  <td className="font-mono text-[0.76rem] text-navy-200">{row.date}</td>
-                  <td className="font-mono text-[0.76rem] text-navy-200">
-                    {pick(row.category, locale)}
-                  </td>
-                  <td className="num font-semibold text-white">{row.couples}</td>
-                  <td className="text-white/90">{row.winner}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div className="space-y-5">
+          {competitionResults.map((event) => (
+            <article
+              key={event.id}
+              className="rounded-xl border border-white/15 bg-navy-950/60 p-5 shadow-[0_15px_35px_rgba(0,0,0,0.3)] backdrop-blur-md sm:p-6"
+            >
+              <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
+                <h3 className="font-display text-[1.05rem] font-bold leading-snug text-white sm:text-[1.2rem]">
+                  {pick(event.competition, locale)}
+                </h3>
+                <span className="rounded-full border border-mag/40 bg-mag/15 px-2.5 py-0.5 font-mono text-[0.66rem] font-semibold uppercase tracking-[0.08em] text-mag">
+                  {pick(event.ageGroup, locale)}
+                </span>
+                <span className="rounded-full border border-white/20 bg-white/10 px-2.5 py-0.5 font-mono text-[0.66rem] uppercase tracking-[0.08em] text-navy-100">
+                  {t('officialResults')}
+                </span>
+              </header>
+
+              <div
+                className={`mt-5 grid gap-4 lg:gap-5 ${
+                  event.categories.length > 1 ? 'lg:grid-cols-2' : ''
+                }`}
+              >
+                {event.categories.map((category) => (
+                  <section key={category.id} className="rounded-lg border border-white/10 bg-white/[0.04] p-4">
+                    {category.title ? (
+                      <h4 className="mb-3 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-mag">
+                        {pick(category.title, locale)}
+                      </h4>
+                    ) : null}
+                    <ol className="space-y-2">
+                      {category.placements.map((placement) => (
+                        <li
+                          key={placement.position}
+                          className="flex items-center gap-3 rounded-md border border-white/10 bg-navy-950/60 px-3 py-2.5"
+                        >
+                          <span
+                            className={`flex h-8 w-8 flex-none items-center justify-center rounded-full font-display text-[0.95rem] font-extrabold ${
+                              PODIUM_STYLE[placement.position] ?? 'bg-white/10 text-navy-100'
+                            }`}
+                            aria-label={`${t('place')} ${placement.position}`}
+                          >
+                            {placement.position}
+                          </span>
+                          <span className="min-w-0">
+                            {placement.partners.map((partner) => (
+                              <span key={partner.name} className="block leading-snug text-[0.88rem] text-white">
+                                {partner.name}
+                                <span className="ml-1.5 font-mono text-[0.72rem] text-navy-300">
+                                  {partner.born}
+                                </span>
+                              </span>
+                            ))}
+                          </span>
+                        </li>
+                      ))}
+                    </ol>
+                  </section>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       )
     }

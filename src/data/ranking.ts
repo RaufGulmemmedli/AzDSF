@@ -1,4 +1,4 @@
-import type { Localized, RankingRow, ResultRow } from '@/types';
+import type { CompetitionResult, Localized, RankingRow } from '@/types';
 
 /** DEMO DATA — couple names, clubs and points are sample entries, not a real registry. */
 
@@ -119,40 +119,119 @@ export const rankingTables: RankingTable[] = [
   }
 ];
 
-export const recentResults: ResultRow[] = [
+/**
+ * REAL RESULTS — official protocol of the Azerbaijan National Championship
+ * (Azərbaycan Birinciliyi və Azərbaycan Çempionatı). Keep names and birth years
+ * exactly as published; add further age groups and programmes as their protocols
+ * arrive. A category without a `title` is one combined placing table.
+ */
+export const competitionResults: CompetitionResult[] = [
   {
-    competition: { az: 'Qış Open', en: 'Winter Open' },
-    date: '08.02.2026',
-    category: { az: 'Gənclər · Latın', en: 'Youth · Latin' },
-    couples: 142,
-    winner: 'Elvin Cəfərov / Səbinə Allahverdiyeva'
+    id: 'azerbaijan-championship-junior-2',
+    competition: {
+      az: 'Azərbaycan Birinciliyi və Azərbaycan Çempionatı',
+      en: 'Azerbaijan National Championship'
+    },
+    ageGroup: { az: 'Yunior 2', en: 'Junior II' },
+    categories: [
+      {
+        id: 'latin',
+        title: { az: 'Latın', en: 'Latin' },
+        placements: [
+          {
+            position: 1,
+            partners: [
+              { name: 'Səfərli Kərim', born: 2016 },
+              { name: 'Əsqərzadə Banu', born: 2014 }
+            ]
+          },
+          {
+            position: 2,
+            partners: [
+              { name: 'Cəbrayılov İlyas', born: 2012 },
+              { name: 'Əliyeva Fatimə', born: 2011 }
+            ]
+          },
+          {
+            position: 3,
+            partners: [
+              { name: 'Konopelkin Daniil', born: 2014 },
+              { name: 'Hüseynova Züleyxa', born: 2012 }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'standard',
+        title: { az: 'Avropa Standart rəqsləri', en: 'European Standard' },
+        placements: [
+          {
+            position: 1,
+            partners: [
+              { name: 'Səfərli Kərim', born: 2016 },
+              { name: 'Əsqərzadə Banu', born: 2014 }
+            ]
+          },
+          {
+            position: 2,
+            partners: [
+              { name: 'Konopelkin Daniil', born: 2014 },
+              { name: 'Hüseynova Züleyxa', born: 2012 }
+            ]
+          },
+          {
+            position: 3,
+            partners: [
+              { name: 'Cəbrayılov İlyas', born: 2012 },
+              { name: 'Əliyeva Fatimə', born: 2011 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    competition: { az: 'Klub Liqası I', en: 'Club League I' },
-    date: '24.01.2026',
-    category: { az: 'Uşaqlar · Standard', en: 'Juvenile · Standard' },
-    couples: 96,
-    winner: 'Nihad Əliyev / Mələk Quliyeva'
+    id: 'azerbaijan-championship-junior-1',
+    competition: {
+      az: 'Azərbaycan Birinciliyi və Azərbaycan Çempionatı',
+      en: 'Azerbaijan National Championship'
+    },
+    ageGroup: { az: 'Yunior 1', en: 'Junior I' },
+    categories: [
+      {
+        id: 'overall',
+        placements: [
+          {
+            position: 1,
+            partners: [
+              { name: 'Hüseynov Murad', born: 2014 },
+              { name: 'Meneyeva Viktoriya', born: 2015 }
+            ]
+          }
+        ]
+      }
+    ]
   },
   {
-    competition: { az: 'Payız Kuboku', en: 'Autumn Cup' },
-    date: '15.11.2025',
-    category: { az: 'Yetkinlər · Latın', en: 'Adults · Latin' },
-    couples: 118,
-    winner: 'Rəşad Əliyev / Nigar Hüseynova'
-  },
-  {
-    competition: { az: 'Regional Turnir', en: 'Regional Tournament' },
-    date: '27.09.2025',
-    category: { az: 'Yeniyetmələr · Standard', en: 'Junior · Standard' },
-    couples: 74,
-    winner: 'Ramil Qasımov / Nərmin Şirinova'
-  },
-  {
-    competition: { az: 'Mövsüm Açılışı', en: 'Season Opening' },
-    date: '13.09.2025',
-    category: { az: 'Yetkinlər · Standard', en: 'Adults · Standard' },
-    couples: 103,
-    winner: 'Murad Həsənov / Zeynəb Kərimova'
+    id: 'azerbaijan-championship-juvenile-2',
+    competition: {
+      az: 'Azərbaycan Birinciliyi və Azərbaycan Çempionatı',
+      en: 'Azerbaijan National Championship'
+    },
+    ageGroup: { az: 'Yuvenal 2', en: 'Juvenile II' },
+    categories: [
+      {
+        id: 'overall',
+        placements: [
+          {
+            position: 2,
+            partners: [
+              { name: 'Zinin Daniil', born: 2015 },
+              { name: 'Əsqərzadə Zeynəb', born: 2016 }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];

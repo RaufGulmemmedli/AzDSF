@@ -39,7 +39,7 @@ export default function NewsPage({ params: { locale } }: { params: { locale: str
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {news.map((item, i) => (
             <Reveal key={item.id} delay={i * 0.05}>
-              <article className="group h-full rounded-xl border border-line bg-white p-4.5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-300 hover:shadow-md">
+              <article className="group h-full rounded-xl border border-line bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-navy-300 hover:shadow-md">
                 <div className="overflow-hidden rounded-lg">
                   <Visual
                     seed={item.seed}

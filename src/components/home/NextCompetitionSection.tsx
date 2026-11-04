@@ -13,7 +13,7 @@ export default function NextCompetitionSection({ next }: { next: Competition }) 
   const locale = useLocale();
 
   return (
-    <section className="relative -mt-4 z-10 wrap pb-8 pt-2" aria-labelledby="next-comp-h">
+    <section className="relative mt-6 z-10 wrap pb-8 pt-2" aria-labelledby="next-comp-h">
       <div className="overflow-hidden rounded-2xl border border-navy-200/80 bg-white shadow-[0_20px_50px_-12px_rgba(11,23,40,0.18)] transition-all hover:shadow-[0_24px_60px_-10px_rgba(11,23,40,0.22)]">
         {/* Top Header Strip */}
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-navy-100 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950 px-6 py-3.5 text-white">
