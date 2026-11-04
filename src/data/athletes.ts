@@ -17,6 +17,7 @@ export const athletes: Athlete[] = [
     },
     badge: { az: 'Çempionatın qalibi', en: 'National champion' },
     image: '/athletes/kerim-banu.jpeg',
+    focus: '50% 10%',
     seed: 51,
     mode: 'brand'
   },
@@ -29,6 +30,8 @@ export const athletes: Athlete[] = [
     },
     badge: { az: 'Çempionat mükafatçısı', en: 'Championship medallist' },
     image: '/athletes/ilyas-fatime-latin.jpeg',
+    focus: '50% 85%',
+    zoom: 1.18,
     seed: 52,
     mode: 'mag'
   },
@@ -41,6 +44,7 @@ export const athletes: Athlete[] = [
     },
     badge: { az: 'Çempionat mükafatçısı', en: 'Championship medallist' },
     image: '/athletes/daniil-zuleyxa.jpeg',
+    focus: '50% 15%',
     seed: 53,
     mode: 'brand'
   },
@@ -49,6 +53,8 @@ export const athletes: Athlete[] = [
     name: 'Səfərli Səid / Allahverdiyeva Leyli',
     detail: { az: 'Yuvenal 1', en: 'Juvenile I' },
     image: '/athletes/seid-leyli.jpeg',
+    focus: '50% 20%',
+    zoom: 1.12,
     seed: 54,
     mode: 'light'
   },
@@ -57,6 +63,7 @@ export const athletes: Athlete[] = [
     name: 'Zeynal Şakir / Muradi Elina',
     detail: { az: 'Yuvenal 2', en: 'Juvenile II' },
     image: '/athletes/sakir-elina.jpeg',
+    focus: '50% 8%',
     seed: 55,
     mode: 'mag'
   },
@@ -66,6 +73,8 @@ export const athletes: Athlete[] = [
     detail: { az: 'Yunior 1 · 1-ci yer', en: 'Junior I · 1st place' },
     badge: { az: 'Çempionatın qalibi', en: 'National champion' },
     image: '/athletes/murad-viktoriya.jpeg',
+    focus: '50% 88%',
+    zoom: 1.22,
     seed: 56,
     mode: 'brand'
   },
@@ -97,6 +106,7 @@ export const athletes: Athlete[] = [
     id: 'safiya',
     name: 'Safiya',
     image: '/athletes/safiya.jpeg',
+    focus: '50% 25%',
     seed: 60,
     mode: 'light'
   },

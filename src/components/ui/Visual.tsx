@@ -17,6 +17,15 @@ type Props = {
   alt?: string;
   /** Rendered width of the box, for the `next/image` srcset. */
   sizes?: string;
+  /**
+   * Where the photograph sits inside the box, as a CSS `object-position` value
+   * (e.g. `'50% 12%'`). The box is `object-cover`, so a source taller than the
+   * slot loses its top and bottom when centred — heads first. Biasing the
+   * anchor upwards keeps faces in frame. Defaults to centred.
+   */
+  focus?: string;
+  /** Extra magnification of the photograph, anchored at `focus`. 1 = none. */
+  zoom?: number;
   priority?: boolean;
   children?: React.ReactNode;
 };
@@ -34,6 +43,8 @@ export default function Visual({
   src,
   alt = '',
   sizes = '100vw',
+  focus,
+  zoom,
   priority,
   children
 }: Props) {
@@ -64,6 +75,11 @@ export default function Visual({
           sizes={sizes}
           priority={priority}
           className="object-cover"
+          style={{
+            objectPosition: focus,
+            transform: zoom && zoom !== 1 ? `scale(${zoom})` : undefined,
+            transformOrigin: focus
+          }}
         />
       ) : (
         <canvas ref={ref} aria-hidden="true" className="absolute inset-0 block h-full w-full" />

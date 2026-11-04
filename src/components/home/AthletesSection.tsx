@@ -41,6 +41,8 @@ export default function AthletesSection() {
                     className="aspect-[3/4] !rounded-none transition-transform duration-500 group-hover:scale-[1.03]"
                     tag={athlete.image ? undefined : t('photoPending')}
                     src={athlete.image}
+                    focus={athlete.focus}
+                    zoom={athlete.zoom}
                     alt={athlete.detail ? `${athlete.name} — ${pick(athlete.detail, locale)}` : athlete.name}
                     sizes="(min-width: 1024px) 24vw, (min-width: 640px) 48vw, 100vw"
                   />

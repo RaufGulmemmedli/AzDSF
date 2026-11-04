@@ -97,6 +97,14 @@ export type Athlete = {
   badge?: Localized;
   /** Photograph under `/public`; the generated composition is used when absent. */
   image?: string;
+  /**
+   * `object-position` for `image` inside the 3:4 card, e.g. `'50% 10%'`.
+   * Sources taller than 3:4 are cropped top and bottom; without a top bias the
+   * dancers' heads are the first thing to go.
+   */
+  focus?: string;
+  /** Magnification of `image` around `focus`, for shots framed too wide. */
+  zoom?: number;
   seed: number;
   mode: VisualMode;
 };
