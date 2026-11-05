@@ -74,15 +74,7 @@ export default function Hero({ next }: { next?: Competition }) {
           its own shadow to stay readable over a bright frame.
         */}
         <div className="max-w-[min(100%,640px)] [text-shadow:0_1px_2px_rgba(9,23,43,0.95),0_2px_16px_rgba(9,23,43,0.9),0_10px_44px_rgba(9,23,43,0.7)]">
-          <div
-            data-hero="eyebrow"
-            className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/25 bg-navy-950/55 px-3.5 py-1 backdrop-blur-md"
-          >
-            <span className="h-2 w-2 rounded-full bg-mag shadow-[0_0_8px_#ED018A]" />
-            <span className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-white">
-              {t('eyebrow')}
-            </span>
-          </div>
+         
 
           <h1 className="h1 text-white" id="hero-h">
             <span data-hero="line" className="inline-block">
