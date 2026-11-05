@@ -34,7 +34,11 @@
     "days": "gün",
     "hours": "saat",
     "minutes": "dəq",
-    "seconds": "san"
+    "seconds": "san",
+    "sliderLabel": "Baş səhifə slayderi",
+    "sliderPrevious": "Əvvəlki şəkil",
+    "sliderNext": "Növbəti şəkil",
+    "sliderGoTo": "{number}-ci şəkilə keç"
   },
   "Tiles": {
     "quickLinks": "Sürətli keçidlər",
@@ -119,7 +123,9 @@
     "eyebrow": "Milli komanda 2026",
     "title": "İdmançılar və rəsmi şəxslər",
     "registry": "Cütlüklər reyestri",
-    "photoPending": "Foto gözlənilir"
+    "photoPending": "Foto gözlənilir",
+    "showMore": "Daha çox göstər",
+    "showLess": "Daha az göstər"
   },
   "Membership": {
     "eyebrow": "Üzvlük 2025/26",

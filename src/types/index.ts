@@ -117,6 +117,21 @@ export type City = {
   halls: number;
 };
 
+/** One frame of the home-page hero slider — see `src/data/heroSlides.ts`. */
+export type HeroSlide = {
+  id: string;
+  /** Photograph under `/public/slider`. */
+  image: string;
+  /** Describes the photograph for screen readers. */
+  alt: Localized;
+  /**
+   * `object-position` for the full-bleed hero box, e.g. `'60% 25%'`. The hero
+   * is far wider than it is tall, so every source loses a lot of its height —
+   * the x value also pushes the dancers clear of the headline on the left.
+   */
+  focus?: string;
+};
+
 export type GalleryItem = {
   id: string;
   caption: Localized;
