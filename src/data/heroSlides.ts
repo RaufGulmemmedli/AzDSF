@@ -49,7 +49,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: 'breaking-blue',
-    image: '/slider/bboy_cyan_blue_stage.jpg',
+    image: '/slider/bboy_perfect_crop_centered.jpg',
     alt: {
       az: 'Breykinq — mavi səhnə işığında b-boy çıxışı',
       en: 'Breaking — a b-boy performing under blue stage light'

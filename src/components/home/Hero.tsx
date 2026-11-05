@@ -54,7 +54,7 @@ export default function Hero({ next }: { next?: Competition }) {
     */
     <section
       ref={root}
-      className="relative flex w-full min-h-[540px] items-center overflow-hidden bg-navy-950 text-white sm:min-h-[580px] lg:aspect-[16/9] lg:max-h-[1040px] lg:min-h-[620px]"
+      className="relative flex w-full min-h-[540px] items-stretch overflow-hidden bg-navy-950 text-white sm:min-h-[580px] lg:aspect-[16/9] lg:max-h-[1040px] lg:min-h-[620px] lg:items-center"
       aria-labelledby="hero-h"
     >
       {/*
@@ -68,7 +68,13 @@ export default function Hero({ next }: { next?: Competition }) {
       */}
       <HeroSlider />
 
-      <div className="wrap relative z-[2] w-full py-[clamp(50px,6vw,80px)]">
+      {/*
+        On a phone the copy spreads over the whole height — headline at the top,
+        buttons at the bottom — so the photograph is left open in between. The
+        extra bottom padding keeps the buttons clear of the slider dots. From
+        `lg` it goes back to one centred block.
+      */}
+      <div className="wrap relative z-[2] flex w-full flex-col justify-between pb-[86px] pt-[clamp(28px,7vw,52px)] sm:justify-center sm:py-[clamp(50px,6vw,80px)] lg:block">
         {/*
           Nothing tints the photograph any more, so every piece of copy carries
           its own shadow to stay readable over a bright frame.
@@ -84,19 +90,23 @@ export default function Hero({ next }: { next?: Competition }) {
               {t('titleB')}
             </span>
           </h1>
-          <p data-hero="sub" className="mt-5 max-w-[54ch] text-[clamp(1rem,1.25vw,1.15rem)] font-medium leading-[1.7] text-white">
+          {/* Too much copy for a phone screen — kept from `sm` up. */}
+          <p
+            data-hero="sub"
+            className="mt-5 hidden max-w-[54ch] text-[clamp(1rem,1.25vw,1.15rem)] font-medium leading-[1.7] text-white sm:block"
+          >
             {t('subtitle')}
           </p>
+        </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link data-hero="cta" href="/competitions" className="btn btn-mag">
-              {t('ctaCalendar')}
-              <ArrowRight size={16} aria-hidden="true" />
-            </Link>
-            <Link data-hero="cta" href="/#uzvluk" className="btn btn-on-dark">
-              {t('ctaJoin')}
-            </Link>
-          </div>
+        <div className="mt-10 flex max-w-[min(100%,640px)] flex-wrap items-center gap-3 sm:mt-8">
+          <Link data-hero="cta" href="/competitions" className="btn btn-mag">
+            {t('ctaCalendar')}
+            <ArrowRight size={16} aria-hidden="true" />
+          </Link>
+          <Link data-hero="cta" href="/#uzvluk" className="btn btn-on-dark">
+            {t('ctaJoin')}
+          </Link>
         </div>
       </div>
     </section>

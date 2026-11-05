@@ -85,7 +85,8 @@ export default function HeroSlider() {
 
       {count > 1 ? (
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[3]">
-          <div className="wrap flex justify-center pb-3 lg:justify-end lg:pb-5">
+          {/* Sits 50px higher on a wide screen; on a phone it stays by the edge. */}
+          <div className="wrap flex justify-center pb-3 lg:justify-end lg:pb-[55px]">
             <div
               className="pointer-events-auto flex items-center gap-1.5 rounded-full border border-white/20 bg-navy-950/60 px-2 py-1.5 backdrop-blur-md"
               onMouseEnter={() => setPaused(true)}
